@@ -22,15 +22,22 @@ let contador = 0;
 let anosPessoas = [];
 
 while(numInserido >= 0){
-    numInserido = parseInt(prompt("Digite um ano de nascimento para adicionar ao array.\nDigite qualquer numero abaixo de 0 para parar."));
-    if(numInserido >= 0){
+    numInserido = parseInt(prompt("Digite um ano de nascimento para adicionar ao array.\nDigite um numero menor que zero ou uma letra para parar."));
+    if(numInserido >= 0 || !(isNaN(numInserido))){
         anosPessoas[contador] = numInserido;
         contador++;
     }
 }
 
 let anoAtual = 0;
-anoAtual = parseInt(prompt("Digite o Ano Atual"));
+while(true){
+    anoAtual = parseInt(prompt("Digite o Ano Atual"));
+    if(!(isNaN(anoAtual))){
+        break;
+    }
+    alert("Digite um numero válido.");
+}
+
 
 let arrayIdades = VerificarIdades(anosPessoas, anoAtual);
 console.log(arrayIdades);
