@@ -11,7 +11,7 @@ while(repetir){
     let numeroValido = false;
     while(numeroValido == false){  
         numero = parseFloat(prompt("Digite o Numero a ser Fatoriado"));
-        if(numero >= 0){
+        if(numero >= 0 && !(isNaN(numero))){
             numeroValido = true;
         } else {
             alert("Numero Invalido, digite novamente");
