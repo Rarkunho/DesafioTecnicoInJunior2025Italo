@@ -3,9 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>    
+        DesafioTecnicoInJunior2025Italo
+    </title>
 </head>
 <body>
-    <script src="Exercicio1.js"></script>
+    <h1>Escolha um Exercício</h1>
+    <select id="selecionador">
+        <option value="Exercicio1.js">Exercício 1</option>
+        <option value="Exercicio2.js">Exercício 2</option>
+        <option value="Exercicio3.js">Exercício 3</option>
+        <option value="Exercicio4.js">Exercício 4</option>
+        <option value="Exercicio5.js">Exercício 5</option>
+        <option value="Exercicio6.js">Exercício 6</option>
+        <option value="Exercicio7.js">Exercício 7</option>
+        <option value="Exercicio8.js">Exercício 8</option>
+        <option value="Exercicio9.js">Exercício 9</option>
+        <option value="Exercicio10.js">Exercício 10</option>
+        <option value="Exercicio11.js">Exercício 11</option>
+        <option value="Exercicio12.js">Exercício 12</option>
+        <option value="Exercicio13.js">Exercício 13</option>
+    </select>
+    <button onclick="EscolherExercicio()">Escolher esse exerício</button>
+    <script>
+        function EscolherExercicio() {
+            var selector = document.getElementById('selecionador');
+            var selectedExercise = selector.value;
+
+            var aux = document.getElementById('scriptExercicio');
+            if (aux) {
+                document.body.removeChild(aux);
+            }
+
+            var script = document.createElement('script');
+            script.id = 'scriptExercicio';
+            script.src = selectedExercise;
+            document.body.appendChild(script);
+        }
+    </script>
 </body>
 </html>
