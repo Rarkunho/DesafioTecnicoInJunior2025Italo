@@ -11,11 +11,19 @@ while(true){
     switch (escolha) {
         case 1:
             let nome = prompt("Digite o nome do cliente a ser adicionado");
-            filaDeAtendimento.push(nome);
+            if(nome.length > 0){
+                filaDeAtendimento.push(nome);
+            } else {
+                alert("Nome não digitado");
+            }
             break;
         case 2:
-            alert("Atendendo Cliente " + filaDeAtendimento[0]);
-            filaDeAtendimento.shift();
+            if(filaDeAtendimento.length > 0){
+                alert("Atendendo Cliente " + filaDeAtendimento[0]);
+                filaDeAtendimento.shift();
+            } else {
+                alert("Sem Clientes para atender");
+            }
             break;
         default:
             break;
